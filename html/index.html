@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Daisyworld</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="settings.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+	</head>
+	<body>
+		<div class="central">
+		<div class="container">
+			<div class="leftbar">
+				<canvas id="maxpos" width="400" height="300" style="float:left"></canvas>
+				<canvas id="temp" width="400" height="300" style="float:left"></canvas>
+				<canvas id="colour" width="400" height="300" style="float:left"></canvas>
+				<canvas id="population" width="400" height="300" style="float:left"></canvas>
+			</div>
+			<div class="rightbar">
+				<div class="controls">
+					<input type="checkbox" name="evolution" id="evolve" value="Evolve?">Allow Mutations<br>
+					<input type="number" id="insolation" value="1">
+					<button onclick="update_insolation()">Update</button>
+					<br>
+					<button onclick="extinction(0.8)">Mass Extinction</button>
+					<br><br>
+					<button onclick="display_temperature()">Show Temp</button><br>
+					<button onclick="start()">Step Forward</button>
+				</div>
+				<div class="output">
+					<canvas id="myCanvas" width="300" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+			<div class="text">
+				<p id="tex">In the 1970s James Lovelock and Lynn Margulis proposed the 'Gaia Hypothesis'.</p> <!-- My plan was to put some text about Gaia and Daisyworld and the rest of the project down here. -->
+			<div>
+		</div>
+		<script src="web.js"></script>
+	</body>
+</html>
+		
