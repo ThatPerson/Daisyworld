@@ -5,8 +5,8 @@ var landscape_y = 30;
 /* Initial settings */
 var initial_pop = 10;
 var initial_mutation_rate = 0.5;
-var initial_colour = 0.3;
-var initial_t_opt = 10;
+var initial_colour = 0.5;
+var initial_t_opt = 25;
 var initial_dispersal = 3;
 var initial_progeny = 2;
 var diploid = 1;
@@ -112,9 +112,9 @@ function update_t_map() {
 	for (x = 0; x < landscape_x; x++) {
 		for (y = 0; y < landscape_y; y++) {
 			min_x = x - 1;
-			max_x = x + 1;
+			max_x = x + 2;
 			min_y = y - 1;
-			max_y = y + 1;
+			max_y = y + 2;
 			if (min_x < 0)
 				min_x = 0;
 			if (max_x > landscape_x - 1)
@@ -124,8 +124,8 @@ function update_t_map() {
 			if (max_y > landscape_y - 1)
 				max_y = landscape_y - 1;
 			var total = 0;
-			for (xi = min_x; xi <= max_x; xi++) {
-				for (yi = min_y; yi <= max_y; yi++) {
+			for (xi = min_x; xi < max_x; xi++) {
+				for (yi = min_y; yi < max_y; yi++) {
 					total += b_temperature_map[xi][yi];
 				}
 			}
